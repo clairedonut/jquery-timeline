@@ -1,0 +1,665 @@
+// imported fonts
+
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+// media queries
+
+  // Small devices (landscape phones, 576px and up)
+$max-break-small: "only screen and (max-width : 576px)";
+  // Medium devices (tablets, 768px and up)
+$max-break-medium: "only screen and (max-width : 768px)";
+  // Large devices (desktops, 992px and up)
+$max-break-large: "only screen and (max-width : 992px)";
+  // Extra large devices (large desktops, 1200px and up)
+$max-break-xlarge: "only screen and (max-width : 1200px)";
+
+
+
+$min-break-small: "only screen and (min-width : 576px)";
+  // Medium devices (tablets, 768px and up)
+$min-break-medium: "only screen and (min-width : 768px)";
+  // Large devices (desktops, 992px and up)
+$min-break-large: "only screen and (min-width : 992px)";
+  // Extra large devices (large desktops, 1200px and up)
+$min-break-xlarge: "only screen and (min-width : 1200px)";
+
+
+// variables
+
+$splash-text: #484848;
+
+$nav: #80CED7;
+$nav-text: #fff;
+
+$intro: #fff;
+$intro-text: #3685B5;
+$intro-font: 'Questrial', sans-serif;
+
+$article-title: 'Roboto', sans-serif;;
+$article-text: 1em 'Open sans', sans-serif;
+
+$timeline: #42858C;
+
+$footer: #459ae3;
+
+$brand-font: 'Homemade Apple', cursive;
+
+$fa-chevron-circle-up: #484848;
+
+
+// mixins
+
+@mixin link($display, $hover, $active) { // define hyperlink properties
+  a {
+    text-decoration: none;
+    color: $display;
+    &:hover {
+      text-decoration: none;
+      color: $hover;
+    }
+    &:active {
+      text-decoration: none;
+      color: $active;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+    &:link {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin flex($horizontal, $vertical) { // flexbox
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin flex-v($vertical, $horizontal) { // flexbox
+  display: flex;
+  flex-direction: column;
+  justify-content: $vertical;
+  align-items: $horizontal;
+}
+
+@mixin parallax ($url, $height) {
+
+  /* Image used */
+  background-image: url($url);
+
+  /* Set a specific height */
+  height: $height;
+
+  /* To create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@mixin font-style($size, $family, $padding, $text-align) {
+  font-size: $size;
+  font-family: $family;
+  padding:$padding;
+  text-align: $text-align;
+  width: 100%;
+}
+
+// properties
+
+/* applicable to whole site */
+
+body {
+  @media only screen and (min-width : 1500px) {
+    max-width: 1500px!important;
+    margin: 0 auto !important;
+  }
+  .container-fluid {
+    // padding:0;
+  }
+}
+
+.display.none {
+  display: none;
+}
+
+.overflow.hidden{
+  overflow: scroll;
+  div{
+    padding: 0;
+    img{
+      padding: 0 2px;
+    }
+  }
+}
+
+.accordion {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  &:active {
+    text-decoration: underline;
+    color: orange;
+  }
+  &:visited {
+    text-decoration: underline;
+    color: blue;
+
+  }
+}
+
+ol li {
+  padding-right: 50px;
+}
+
+
+
+
+/* -------------------- header -------------------- */
+
+header {
+  nav {
+    position: relative;
+    background-color: $nav;
+  }
+  .navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+    color: $nav-text;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: $nav-text;
+  }
+}
+
+.navbar-brand {
+  font-family: $brand-font;
+  font-size: 1.9rem;
+}
+
+/* -------------------- footer -------------------- */
+
+.fa-chevron-circle-up {
+  color: $fa-chevron-circle-up;
+  margin: 1em 2em;
+}
+
+footer {
+  background-color: $footer;
+  padding: 10px;
+  @include flex(start, center);
+
+  h2 {
+    margin: 5px 20px;
+    color: #fff;
+    font-size: 1em ;
+  }
+}
+
+
+/* -------------------- splash page -------------------- */
+
+#startPage {
+  width: 100%;
+  height:100%;
+  position:fixed;
+
+  @media #{$max-break-small} {
+    background-image: url("../vid/poster/banner.jpeg");
+    background-size: cover;
+    video {
+      display: none;
+    }
+  }
+
+}
+
+.splash {
+  @include flex-v (center, center) ;
+
+  video {
+    position: relative;
+    z-index: -2;
+  }
+
+  .cover-title {
+    @include flex-v (space-around, center);
+    position: absolute;
+    height:100%;
+
+    @media #{$min-break-medium} {
+      @include flex-v (center, center);
+      width: 70%;
+    }
+
+    h1 {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+      text-align:center;
+      font-size: 9vw;
+      line-height: 2em;
+      font-family: $brand-font;
+      color: white;
+
+      @media #{$min-break-medium} {
+        font-size: 6vw;
+      }
+
+      @media #{$min-break-large} {
+        font-size: 5vw;
+      }
+    }
+
+    h2 {
+      display: none;
+
+      font-size: 1.8rem;
+      font-family: 'Questrial', sans-serif;
+      text-align:center;
+      color: $splash-text;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 5px;
+      margin: 2em 0;
+      line-height: 1.5em;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+
+      @media #{$min-break-medium} {
+        display: block;
+      }
+
+      @media #{$min-break-large} {
+        width: 60%;
+      }
+    }
+
+    .btn.btn-lg.btn-info{
+      padding: 10px 100px;
+      @media #{$min-break-medium} {
+        padding: 10px 30px;
+      }
+      &:hover{
+        background: none;
+      }
+    }
+  }
+}
+
+/* -------------------- introduction -------------------- */
+
+.intro {
+  background: $intro;
+  article {
+    @include flex-v(center, center);
+    padding:0;
+    margin: 0;
+    p {
+      color: $intro-text;
+      font-family: $intro-font;
+      font-size: 1.8em;
+      margin: 5em 2em ;
+      text-align: center;
+    }
+  }
+}
+
+/* -------------------- articles -------------------- */
+
+.update {
+  background: white;
+  color: $intro-text;
+  font-family: $intro-font;
+  font-size: 1.8em;
+  margin: 0 ;
+  padding: 3em 0 ;
+  @include flex-v (center,center);
+  text-align: center;
+  @media #{$min-break-medium} {
+    margin: 2em ;
+    padding: 3em 1em ;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  p {
+    padding: 1em 0;
+  }
+
+}
+
+
+// h2
+
+.update-tree {
+  padding: 2em 1em;
+  margin:0;
+  background-color: #C4D6B0;
+  &:hover {
+    background-color: #C4D6B0;
+    color: #533A7B;
+    text-shadow: 3px 3px 1px rgba(255, 0, 153, .8);
+  }
+  @media #{$min-break-medium} {
+    padding: 1em 3em ;
+  }
+  h2 {
+    font-family: $intro-font;
+    text-align:center;
+    font-size: 3em;
+    padding: 2em 0;
+    @media #{$min-break-medium} {
+      font-size: 4em;
+      padding: 2em;
+    }
+  }
+}
+ .update-tree-img {
+   background-color: #43AA8B;
+   padding: 2em ;
+ }
+
+ .bg-green {
+   background-color: #C4D6B0;
+ }
+
+.content_9 {
+  .timeline {
+    @media #{$max-break-small} {
+      background-color: #fff;
+    }
+}
+  @include flex-v(center,center);
+  li {
+    margin:0;
+    text-align: left;
+    color: #484848 ;
+    @media #{$min-break-medium} {
+      font-size:1.2em;
+    }
+    .moo {
+      @media #{$max-break-medium} {
+        padding-top:3em;
+      }
+
+    }
+
+  }
+}
+
+
+.content_10 {
+  background: white;
+  padding: 3em 1em;
+  margin: 3em 0;
+  color: purple;
+  font-family: $intro-font;
+
+  h2 {
+    font-family: $brand-font;
+    text-align: center;
+    line-height: 1.5em;
+    padding-bottom: 2em;
+    @media #{$min-break-medium} {
+      font-size: 2.5em;
+    }
+  }
+  blockquote {
+    font-family: $intro-font;
+    font-size: 1.8em;
+    padding: 0;
+    @media #{$max-break-small} {
+      margin-left: 60px;
+    }
+  }
+}
+
+
+.content_11 {
+  li {
+    background-color: #43AA8B;
+    color: #fff;
+    font-size: 1.8em;
+    @media #{$min-break-medium} {
+      font-size: 1.5em;
+    }
+    p {
+      text-align: left;
+    }
+    .margin_11 {
+      @media #{$min-break-medium} {
+        margin: 1em 5em ;
+      }
+    }
+  }
+}
+
+.content_12 {
+  @include flex-v(center,center);
+  padding: 3em 1em;
+  margin: 3em 0;
+  color: purple;
+  font-family: $intro-font;
+  h2 {
+    @include font-style(1.6em, $brand-font, 1em 2em, center);
+    line-height: 1.5em;
+
+    @media #{$min-break-medium} {
+      font-size: 2.5em;
+    }
+  }
+  p {
+    @include font-style(2em, $intro-font, 1.5em 0, left);
+
+    @media #{$min-break-medium} {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.content_13 {
+  h2 {
+    @include font-style(8em, $intro-font, 0.5em 0, center);
+    margin: 1em;
+  }
+}
+
+.content_14 {
+  @include flex-v(center, center);
+
+  // .sceno-carousel {
+  //
+  //   height: 300px;
+  //   width:90%;
+  //   overflow: hidden;
+  //   // .mushu {
+  //   //   overflow: scroll;
+  //     .box {
+  //       height: 100%;
+  //       width:100%;
+  //       overflow: hidden;
+  //       padding:2px;
+  //       img {
+  //         height: auto;
+  //         width: 100%;
+  //       }
+  //     }
+  //   // }
+  // }
+}
+
+
+
+// old
+
+
+.timeline .timeline-items .timeline-item {
+  left: 0;
+}
+
+.timeline-item {
+  h3 {
+    font-family: $intro-font;
+    font-size: 2em;
+
+  }
+  p {
+    font-family: $intro-font;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+
+}
+
+
+.timeline {
+
+  // h2
+  .title-tree {
+    font-size: 3em;
+    padding: 2em 0;
+    @media #{$min-break-medium} {
+      font-size: 4em;
+    }
+  }
+}
+
+.end {
+  margin-top: 2em;
+  &:hover {
+    background-color: #C4D6B0;
+    color: #533A7B;
+    text-shadow: 3px 3px 1px rgba(255, 0, 153, .8);
+    p{
+      text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+  }
+  h2{
+    @include font-style(2em, $brand-font, 2em 0, center);
+    @media #{$min-break-medium} {
+      font-size: 4em;
+    }
+  }
+  p {
+    @include font-style(1.3em, $intro-font, 0, center);
+  }
+}
+
+
+
+.parallax1 {
+  @include parallax('../img/articles/img-3.jpg', 800px);
+  div {
+    height:100%;
+    @include flex-v(center, center);
+    background: rgba(0,0,0,0.5);
+    @media #{$min-break-medium} {
+      @include flex-v(center, center);
+    }
+    &:hover {
+      background: rgba(255, 230, 0, 0.3);
+    }
+  }
+  h3 {
+    font-size: 1.5em ;
+    line-height: 2em;
+    text-align: center;
+    color: #fff !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+    &:hover {
+      text-decoration: none;
+      color: rgb(255, 0, 153) !important;
+    }
+    @media #{$min-break-medium} {
+      font-size: 1.9em ;
+      width: 60%;
+    }
+  }
+}
+
+.parallax2 {
+  @include parallax('../img/articles/img-26.png', 700px);
+  @include flex(center, center);
+  h2 {
+    @include font-style(2em, $brand-font, 0.5em, center);
+    color: #fff;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+    @media #{$min-break-medium} {
+      font-size: 3em;
+      width: 70%;
+    }
+  }
+}
+
+.parallax3 {
+  @include parallax('../img/articles/img-27.png', 800px);
+  @include flex-v(center, center);
+    div{
+      @include flex-v(center, center);
+      background: rgba(255,255,255, 0.5);
+      padding: 2em;
+
+      h2 {
+        color: #484848;
+        font-size: 1.5em;
+        font-family:$brand-font;
+        text-align: center;
+        line-height: 1.5em;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+        @media #{$min-break-medium} {
+          font-size: 3em;
+          line-height: 2em;
+          width: 70%;
+        }
+      }
+      p {
+        font-style: italic;
+      }
+    }
+
+}
+
+
+.article10 {
+  div {
+    @include flex-v(center, center);
+  }
+  h2 {
+    font-family: $brand-font;
+  }
+
+
+}
+
+.carousel-item {
+  @include flex(center, center);
+  height: 300px;
+  width:100%;
+  overflow: hidden;
+  @media #{$min-break-medium} {
+    height: 450px;
+  }
+  img{
+    height:100%;
+    width:auto;
+  }
+}
+
+
+
+.article15{
+  .overflow.hidden {
+    div{
+      margin: 1em;
+    }
+  }
+}
+
+.legend {
+  font-size: 15px;
+  font-weight: bold;
+}

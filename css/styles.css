@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial");
+@import url("https://fonts.googleapis.com/css?family=Homemade+Apple");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* applicable to whole site */
+@media only screen and (min-width: 1500px) {
+  body {
+    max-width: 1500px !important;
+    margin: 0 auto !important; } }
+
+.display.none {
+  display: none; }
+
+.overflow.hidden {
+  overflow: scroll; }
+  .overflow.hidden div {
+    padding: 0; }
+    .overflow.hidden div img {
+      padding: 0 2px; }
+
+.accordion {
+  text-decoration: underline; }
+  .accordion:hover {
+    text-decoration: underline;
+    color: red; }
+  .accordion:active {
+    text-decoration: underline;
+    color: orange; }
+  .accordion:visited {
+    text-decoration: underline;
+    color: blue; }
+
+ol li {
+  padding-right: 50px; }
+
+/* -------------------- header -------------------- */
+header nav {
+  position: relative;
+  background-color: #80CED7; }
+header .navbar-light .navbar-brand, header .navbar-light .navbar-toggler {
+  color: #fff; }
+header .navbar-light .navbar-nav .nav-link {
+  color: #fff; }
+
+.navbar-brand {
+  font-family: "Homemade Apple", cursive;
+  font-size: 1.9rem; }
+
+/* -------------------- footer -------------------- */
+.fa-chevron-circle-up {
+  color: #484848;
+  margin: 1em 2em; }
+
+footer {
+  background-color: #459ae3;
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center; }
+  footer h2 {
+    margin: 5px 20px;
+    color: #fff;
+    font-size: 1em; }
+
+/* -------------------- splash page -------------------- */
+#startPage {
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+  @media only screen and (max-width: 576px) {
+    #startPage {
+      background-image: url("../vid/poster/banner.jpeg");
+      background-size: cover; }
+      #startPage video {
+        display: none; } }
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .splash video {
+    position: relative;
+    z-index: -2; }
+  .splash .cover-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 100%; }
+    @media only screen and (min-width: 768px) {
+      .splash .cover-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%; } }
+    .splash .cover-title h1 {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      font-size: 9vw;
+      line-height: 2em;
+      font-family: "Homemade Apple", cursive;
+      color: white; }
+      @media only screen and (min-width: 768px) {
+        .splash .cover-title h1 {
+          font-size: 6vw; } }
+      @media only screen and (min-width: 992px) {
+        .splash .cover-title h1 {
+          font-size: 5vw; } }
+    .splash .cover-title h2 {
+      display: none;
+      font-size: 1.8rem;
+      font-family: 'Questrial', sans-serif;
+      text-align: center;
+      color: #484848;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 5px;
+      margin: 2em 0;
+      line-height: 1.5em;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); }
+      @media only screen and (min-width: 768px) {
+        .splash .cover-title h2 {
+          display: block; } }
+      @media only screen and (min-width: 992px) {
+        .splash .cover-title h2 {
+          width: 60%; } }
+    .splash .cover-title .btn.btn-lg.btn-info {
+      padding: 10px 100px; }
+      @media only screen and (min-width: 768px) {
+        .splash .cover-title .btn.btn-lg.btn-info {
+          padding: 10px 30px; } }
+      .splash .cover-title .btn.btn-lg.btn-info:hover {
+        background: none; }
+
+/* -------------------- introduction -------------------- */
+.intro {
+  background: #fff; }
+  .intro article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0; }
+    .intro article p {
+      color: #3685B5;
+      font-family: "Questrial", sans-serif;
+      font-size: 1.8em;
+      margin: 5em 2em;
+      text-align: center; }
+
+/* -------------------- articles -------------------- */
+.update {
+  background: white;
+  color: #3685B5;
+  font-family: "Questrial", sans-serif;
+  font-size: 1.8em;
+  margin: 0;
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  @media only screen and (min-width: 768px) {
+    .update {
+      margin: 2em;
+      padding: 3em 1em; } }
+  .update h3 {
+    font-size: 2em; }
+  .update p {
+    padding: 1em 0; }
+
+.update-tree {
+  padding: 2em 1em;
+  margin: 0;
+  background-color: #C4D6B0; }
+  .update-tree:hover {
+    background-color: #C4D6B0;
+    color: #533A7B;
+    text-shadow: 3px 3px 1px rgba(255, 0, 153, 0.8); }
+  @media only screen and (min-width: 768px) {
+    .update-tree {
+      padding: 1em 3em; } }
+  .update-tree h2 {
+    font-family: "Questrial", sans-serif;
+    text-align: center;
+    font-size: 3em;
+    padding: 2em 0; }
+    @media only screen and (min-width: 768px) {
+      .update-tree h2 {
+        font-size: 4em;
+        padding: 2em; } }
+
+.update-tree-img {
+  background-color: #43AA8B;
+  padding: 2em; }
+
+.bg-green {
+  background-color: #C4D6B0; }
+
+.content_9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 576px) {
+    .content_9 .timeline {
+      background-color: #fff; } }
+  .content_9 li {
+    margin: 0;
+    text-align: left;
+    color: #484848; }
+    @media only screen and (min-width: 768px) {
+      .content_9 li {
+        font-size: 1.2em; } }
+    @media only screen and (max-width: 768px) {
+      .content_9 li .moo {
+        padding-top: 3em; } }
+
+.content_10 {
+  background: white;
+  padding: 3em 1em;
+  margin: 3em 0;
+  color: purple;
+  font-family: "Questrial", sans-serif; }
+  .content_10 h2 {
+    font-family: "Homemade Apple", cursive;
+    text-align: center;
+    line-height: 1.5em;
+    padding-bottom: 2em; }
+    @media only screen and (min-width: 768px) {
+      .content_10 h2 {
+        font-size: 2.5em; } }
+  .content_10 blockquote {
+    font-family: "Questrial", sans-serif;
+    font-size: 1.8em;
+    padding: 0; }
+    @media only screen and (max-width: 576px) {
+      .content_10 blockquote {
+        margin-left: 60px; } }
+
+.content_11 li {
+  background-color: #43AA8B;
+  color: #fff;
+  font-size: 1.8em; }
+  @media only screen and (min-width: 768px) {
+    .content_11 li {
+      font-size: 1.5em; } }
+  .content_11 li p {
+    text-align: left; }
+  @media only screen and (min-width: 768px) {
+    .content_11 li .margin_11 {
+      margin: 1em 5em; } }
+
+.content_12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 1em;
+  margin: 3em 0;
+  color: purple;
+  font-family: "Questrial", sans-serif; }
+  .content_12 h2 {
+    font-size: 1.6em;
+    font-family: "Homemade Apple", cursive;
+    padding: 1em 2em;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5em; }
+    @media only screen and (min-width: 768px) {
+      .content_12 h2 {
+        font-size: 2.5em; } }
+  .content_12 p {
+    font-size: 2em;
+    font-family: "Questrial", sans-serif;
+    padding: 1.5em 0;
+    text-align: left;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .content_12 p {
+        font-size: 1.2em; } }
+
+.content_13 h2 {
+  font-size: 8em;
+  font-family: "Questrial", sans-serif;
+  padding: 0.5em 0;
+  text-align: center;
+  width: 100%;
+  margin: 1em; }
+
+.content_14 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.timeline .timeline-items .timeline-item {
+  left: 0; }
+
+.timeline-item h3 {
+  font-family: "Questrial", sans-serif;
+  font-size: 2em; }
+.timeline-item p {
+  font-family: "Questrial", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5em; }
+
+.timeline .title-tree {
+  font-size: 3em;
+  padding: 2em 0; }
+  @media only screen and (min-width: 768px) {
+    .timeline .title-tree {
+      font-size: 4em; } }
+
+.end {
+  margin-top: 2em; }
+  .end:hover {
+    background-color: #C4D6B0;
+    color: #533A7B;
+    text-shadow: 3px 3px 1px rgba(255, 0, 153, 0.8); }
+    .end:hover p {
+      text-shadow: 0px 0px 0px transparent; }
+  .end h2 {
+    font-size: 2em;
+    font-family: "Homemade Apple", cursive;
+    padding: 2em 0;
+    text-align: center;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .end h2 {
+        font-size: 4em; } }
+  .end p {
+    font-size: 1.3em;
+    font-family: "Questrial", sans-serif;
+    padding: 0;
+    text-align: center;
+    width: 100%; }
+
+.parallax1 {
+  /* Image used */
+  background-image: url("../img/articles/img-3.jpg");
+  /* Set a specific height */
+  height: 800px;
+  /* To create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .parallax1 div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); }
+    @media only screen and (min-width: 768px) {
+      .parallax1 div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
+    .parallax1 div:hover {
+      background: rgba(255, 230, 0, 0.3); }
+  .parallax1 h3 {
+    font-size: 1.5em;
+    line-height: 2em;
+    text-align: center;
+    color: #fff !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); }
+    .parallax1 h3:hover {
+      text-decoration: none;
+      color: #ff0099 !important; }
+    @media only screen and (min-width: 768px) {
+      .parallax1 h3 {
+        font-size: 1.9em;
+        width: 60%; } }
+
+.parallax2 {
+  /* Image used */
+  background-image: url("../img/articles/img-26.png");
+  /* Set a specific height */
+  height: 700px;
+  /* To create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .parallax2 h2 {
+    font-size: 2em;
+    font-family: "Homemade Apple", cursive;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); }
+    @media only screen and (min-width: 768px) {
+      .parallax2 h2 {
+        font-size: 3em;
+        width: 70%; } }
+
+.parallax3 {
+  /* Image used */
+  background-image: url("../img/articles/img-27.png");
+  /* Set a specific height */
+  height: 800px;
+  /* To create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .parallax3 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 2em; }
+    .parallax3 div h2 {
+      color: #484848;
+      font-size: 1.5em;
+      font-family: "Homemade Apple", cursive;
+      text-align: center;
+      line-height: 1.5em;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); }
+      @media only screen and (min-width: 768px) {
+        .parallax3 div h2 {
+          font-size: 3em;
+          line-height: 2em;
+          width: 70%; } }
+    .parallax3 div p {
+      font-style: italic; }
+
+.article10 div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+.article10 h2 {
+  font-family: "Homemade Apple", cursive; }
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  overflow: hidden; }
+  @media only screen and (min-width: 768px) {
+    .carousel-item {
+      height: 450px; } }
+  .carousel-item img {
+    height: 100%;
+    width: auto; }
+
+.article15 .overflow.hidden div {
+  margin: 1em; }
+
+.legend {
+  font-size: 15px;
+  font-weight: bold; }
+
+/*# sourceMappingURL=styles.css.map */
